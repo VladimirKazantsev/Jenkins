@@ -2,9 +2,7 @@
 
 def call(Map config){
 	pipeline{
-		agent{
-			any
-		}
+		agent any
 		stages{
 			stage("Этап Первый"){
 				steps{
