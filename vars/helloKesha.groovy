@@ -9,6 +9,11 @@ def call(Map config) {
           sh "echo Privet ${config.name} po familii ${config.lastname}"
         }
       }
+      stage("Этап Второй") {
+        steps {
+          sh "echo Privet ${config.name} po familii ${config.lastname}"
+        }
+      }
     }
   }
 }
