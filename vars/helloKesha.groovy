@@ -11,7 +11,7 @@ def call(Map config) {
       }
       stage("Этап Второй") {
         steps {
-					sh "mkdir -p /Distrib/Config"
+					sh "mkdir -p ./Distrib/Config"
           sh "echo Privet ${config.name} po familii ${config.lastname}"
         }
       }
