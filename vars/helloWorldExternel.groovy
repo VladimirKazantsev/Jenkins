@@ -7,7 +7,7 @@ def call(Map config = [:]) {
       stage("Этап Первый") {
         steps {
           loadLinuxScript(name: 'hello-world.sh')
-					sh "./hello-world.sh ${config.name} po familii ${config.lastname}"
+					sh "./hello-world.sh ${config.name} ${config.lastname}"
         }
       }
       stage("Этап Второй") {
