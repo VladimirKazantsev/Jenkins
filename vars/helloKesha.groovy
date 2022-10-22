@@ -11,7 +11,6 @@ def call(Map config) {
       }
       stage("Этап Второй") {
         steps {
-					sh 'ansible --version'
 					sh "pwd"
 					sh "mkdir -p ./Distrib/Config"
           sh "echo Privet ${config.name} po familii ${config.lastname}"
