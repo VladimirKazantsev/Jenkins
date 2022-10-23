@@ -21,7 +21,7 @@ def call() {
 				steps {
 					echo "=====================Start build image============================="
 					script {
-						docker.build("anshelen/microservices-backend","-f Dockerfile .")
+						docker.build("anshelen/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
 					}
 				}
 			}
