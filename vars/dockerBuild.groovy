@@ -18,6 +18,7 @@ def call() {
 			}
 			stage("Create Docker image") {
 				steps {
+					echo "===============Start build image======================="
 					script {
 						docker.build("anshelen/microservices-backend","-f Dockerfile .")
 					}
