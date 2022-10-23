@@ -12,6 +12,8 @@ def call(Map config) {
 				steps {
 					def dockerfilecontents = libraryResource "docker/Dockerfile"
 					writeFile file : Dockerfile, text: dockerfilecontents
+					sh "pwd"
+					sh "ls"
 				} 
 			}
 			stage("Create Docker image") {
