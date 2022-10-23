@@ -8,6 +8,7 @@ def call() {
 		stages {
 			stage("Load Dockerfile") {
 				steps {
+					echo "===============Load Dockerfile on Jenkins======================="
 					script {
 					def dockerfilecontents = libraryResource "docker/Dockerfile"
 					writeFile file : 'Dockerfile', text: dockerfilecontents
@@ -18,7 +19,7 @@ def call() {
 			}
 			stage("Create Docker image") {
 				steps {
-					echo "===============Start build image======================="
+					echo "=====================Start build image============================="
 					script {
 						docker.build("anshelen/microservices-backend","-f Dockerfile .")
 					}
