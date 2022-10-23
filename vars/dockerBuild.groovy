@@ -17,7 +17,7 @@ def call(Map config) {
 			stage("Create Docker image") {
 				steps {
 					script {
-						docker.build .
+						//docker.build .
 					}
 				}
 			}
