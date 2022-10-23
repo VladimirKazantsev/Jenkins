@@ -19,7 +19,7 @@ def call() {
 			stage("Create Docker image") {
 				steps {
 					script {
-						docker.build("-f .")
+						docker.build("-f Dockerfile .")
 					}
 				}
 			}
