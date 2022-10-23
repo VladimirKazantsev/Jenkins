@@ -1,4 +1,13 @@
 #!/usr/bin/env groovy
 def call(){
-	echo "Privet Mir"
+	pipeline {
+		agent any
+		stages {
+			stage("Первый этап") {
+				steps {
+					sh "echo Hello world"
+				}
+			}
+		}
+	}
 }
