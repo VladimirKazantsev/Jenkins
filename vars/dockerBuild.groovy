@@ -2,9 +2,9 @@
 def call() {
 	pipeline {
 		agent any
-		// options {
-		// 	timestamps()
-		// }
+		options {
+			timestamps()
+		}
 		stages {
 			stage("Load Dockerfile") {
 				steps {
