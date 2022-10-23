@@ -19,7 +19,7 @@ def call() {
 			stage("Create Docker image") {
 				steps {
 					script {
-						def dockerImage = docker.build("anshelen/microservices-backend","-f Dockerfile .")
+						docker.build("anshelen/microservices-backend","-f Dockerfile .")
 					}
 				}
 			}
