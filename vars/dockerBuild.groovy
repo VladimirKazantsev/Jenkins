@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
-def call(Map config) {
+def call() {
 	pipeline {
 		agent
 			any
-		options {
-			timestamps()
-		}
+		// options {
+		// 	timestamps()
+		// }
 		stages {
 			stage("Load Dockerfile") {
 				steps {
@@ -15,13 +15,13 @@ def call(Map config) {
 					sh "ls"
 				} 
 			}
-			stage("Create Docker image") {
-				steps {
-					script {
-						//docker.build .
-					}
-				}
-			}
+			// stage("Create Docker image") {
+			// 	steps {
+			// 		script {
+			// 			//docker.build .
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }
