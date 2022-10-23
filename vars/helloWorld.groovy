@@ -6,6 +6,7 @@ def call() {
       stage("Этап Первый") {
         steps {
           sh "echo Hello world"
+					sh "pwd"
         }
 			}	
     }
