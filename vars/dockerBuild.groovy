@@ -1,8 +1,7 @@
 #!/usr/bin/env groovy
 def call() {
 	pipeline {
-		agent
-			any
+		agent any
 		// options {
 		// 	timestamps()
 		// }
