@@ -8,11 +8,13 @@ def call() {
 		stages {
 			stage("Load Dockerfile") {
 				steps {
+					script {
 					//def dockerfilecontents = libraryResource "docker/Dockerfile"
 					def dockerfilecontents = libraryResource "scripts/linux/hello-world.sh"
 					writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
 					sh "ls"
+					}
 				} 
 			}
 			// stage("Create Docker image") {
