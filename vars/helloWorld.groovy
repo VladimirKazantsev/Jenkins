@@ -13,7 +13,8 @@ def call() {
 				steps {
 					script {
 					// Определяем переменную vova	
-						def vova = "drugtymoylyubeznyi"
+						def vova
+						vova = "drugtymoylyubeznyi"
 						sh "echo This is: ${vova}"
 					}
 				}
