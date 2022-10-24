@@ -22,7 +22,7 @@ def call() {
 						sh "echo This is: ${vova}"
 					// Создание папки
 						sh "mkdir -p ${vova}/Distrib/Identity"
-						sh "ls /"
+						sh "ls"
 					}
 				}
 			}	
