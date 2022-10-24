@@ -8,6 +8,14 @@ def call() {
           sh "echo Hello world"
 					sh "pwd"
         }
+			}
+			stage("Этап_Два_Скрипты") {
+				steps {
+					script {
+						def vova = drugtymoylyubeznyi
+						sh "echo ${vova}"
+					}
+				}
 			}	
     }
 	}
