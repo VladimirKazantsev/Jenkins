@@ -15,6 +15,7 @@ def call() {
 					// Определяем переменную vova	
 						def vova
 						vova = "drugtymoylyubeznyi"
+					// Распечатываем переменную vova	
 						sh "echo This is: ${vova}"
 					}
 				}
