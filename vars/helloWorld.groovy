@@ -14,6 +14,7 @@ def call() {
 			}
 			stage("Этап_Два_Скрипты") {
 				steps {
+					echo "================Start of block script===================="
 					script {
 					// Определяем переменную vova
 						def vova
@@ -23,6 +24,7 @@ def call() {
 					// Создание папки
 						sh "mkdir -p ${vova}/Distrib/Identity"
 						sh "ls"
+						sh "tree"
 					}
 				}
 			}	
