@@ -12,9 +12,8 @@ def call() {
 			stage("Этап_Два_Скрипты") {
 				steps {
 					script {
-						def vova
-						vova = ("drugtymoylyubeznyi")
-						sh "echo ${vova}"
+						vova = "drugtymoylyubeznyi"
+						sh echo ${vova}
 					}
 				}
 			}	
