@@ -12,11 +12,13 @@ def call() {
 			stage("Этап_Два_Скрипты") {
 				steps {
 					script {
-					// Определяем переменную vova	
+					// Определяем переменную vova
 						def vova
-						vova = "drugtymoylyubeznyi"
-					// Распечатываем переменную vova	
+						vova = "elki"
+					// Распечатываем переменную vova
 						sh "echo This is: ${vova}"
+					// Создание папки
+						sh "mkdir -p ${vova}/Distrib/Identity"
 					}
 				}
 			}	
