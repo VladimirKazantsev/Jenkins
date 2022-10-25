@@ -18,7 +18,7 @@ def call() {
 			stage("Ensure source folder exist") {
 				steps {
 					sh """ 
-						ssh jenkins@192.168.50.230 'bash -s' << 'ENDSSH
+						ssh jenkins@192.168.50.230 'bash -s' << 'ENDSSH'
 						
 						hostname
 						
