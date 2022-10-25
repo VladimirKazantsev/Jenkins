@@ -14,6 +14,7 @@ def call() {
 					writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
 					sh "ls"
+					sh "tree"
 					}
 				} 
 			}
