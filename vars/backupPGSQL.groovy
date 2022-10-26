@@ -6,6 +6,15 @@ def call() {
 			timestamps()
 		}
 		parameters {
+
+			choice(name: 'IpServer',
+				choices: [
+					'Никуда',
+					'192.168.50.230'
+				],
+				description: 'Адрес сервера куда пойдет по ssh'
+
+			)
 			
 			string(
 				name: 'dbServer',
@@ -29,7 +38,7 @@ def call() {
 			stage("Ensure source folder exist") {
 				steps {
 					sh """
-						ssh jenkins@192.168.50.230 'bash -s << 'ENDSSH'
+						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
 						echo =================Имя хоста===================
 						docker exec pg5432 pg_dump \
 						--username postgres \
