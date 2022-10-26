@@ -52,7 +52,7 @@ def call() {
 						--clean \
 						--dbname elets \
 						> ${NFS_PATH}/${BACKUPNAME}
-						ls /backup
+						
 						
 ENDSSH'
 """
