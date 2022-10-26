@@ -14,7 +14,16 @@ def call() {
 			)
 		}
 
+		environment{
+			NFS_PATH=""
+		}
+
 		stages {
+			stage("Set vars") {
+				steps {
+					NFS_PATH="/backup"
+				}
+			}
 			stage("Ensure source folder exist") {
 				steps {
 					sh """
@@ -25,7 +34,7 @@ def call() {
 						--verbose \
 						--clean \
 						--dbname elets \
-						> /backup/${env.BUILD_ID}.backup
+						> ${NFS_PATH}/${env.BUILD_ID}.backup
 						ls /backup
 						
 ENDSSH'
