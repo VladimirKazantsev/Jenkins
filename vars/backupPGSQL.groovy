@@ -22,6 +22,7 @@ def call() {
 						
 						hostname
 						ip a
+						pwd
 						
 ENDSSH'
 """
