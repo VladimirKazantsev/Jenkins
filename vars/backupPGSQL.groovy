@@ -21,6 +21,7 @@ def call() {
 						ssh jenkins@192.168.50.230 'bash -s << 'ENDSSH'
 						
 						hostname
+						ip a
 						
 ENDSSH'
 """
