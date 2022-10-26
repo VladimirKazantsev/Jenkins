@@ -23,6 +23,7 @@ def call() {
 						docker exec pg5432 pg_dump \
 						--username postgres \
 						--verbose \
+						--clean \
 						--dbname elets \
 						> /backup/${env.BUILD_ID}.backup
 						ls /backup
