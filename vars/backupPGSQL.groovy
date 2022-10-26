@@ -35,7 +35,7 @@ def call() {
 					}
 				}
 			}
-			stage("Ensure source folder exist") {
+			stage("Create dump DB") {
 				steps {
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
