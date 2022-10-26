@@ -49,7 +49,7 @@ def call() {
 						--verbose \
 						--clean \
 						--dbname elets \
-						> ${NFS_PATH}/${BACKUPNAME}${env.BUILD_ID}
+						> ${NFS_PATH}/${BACKUPNAME}
 						ls /backup
 						
 ENDSSH'
