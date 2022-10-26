@@ -25,7 +25,7 @@ def call() {
 						// pwd
 						// echo =============Образы докер==============
 						// docker images
-						docker exec pg5432 pg_dump -U postgres elets > /backup/4.backup
+						//docker exec pg5432 pg_dump -U postgres elets > /backup/4.backup
 						ls /backup
 						
 ENDSSH'
