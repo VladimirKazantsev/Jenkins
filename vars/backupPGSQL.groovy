@@ -36,7 +36,7 @@ def call() {
 					script {
 						BACKUPDATE=sh(returnStdout: true, script: 'date +"%Y-%m-%d-%H%M"').trim()
 						BACKUPNAME="${params.IpServer}-${BACKUPDATE}.backup"
-						NFS_PATH="/backup"
+						NFS_PATH="/backup/${params.dbServer}"
 						TARNAME="${BACKUPNAME}.tar.gz"
 					}
 				}
