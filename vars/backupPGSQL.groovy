@@ -19,7 +19,7 @@ def call() {
 				steps {
 					sh """
 						ssh jenkins@192.168.50.230 'bash -s << 'ENDSSH'
-						
+						echo "Имя хоста"
 						hostname
 						ip a
 						pwd
