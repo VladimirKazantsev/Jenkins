@@ -19,13 +19,12 @@ def call() {
 				steps {
 					sh """
 						ssh jenkins@192.168.50.230 'bash -s << 'ENDSSH'
-						// echo =================Имя хоста===================
-						// hostname
-						// echo =============Рабочая директория==============
-						// pwd
-						// echo =============Образы докер==============
-						// docker images
-						docker exec pg5432 pg_dump -U postgres elets > /backup/${env.BUILD_ID}.backup
+						echo =================Имя хоста===================
+						docker exec pg5432 pg_dump \
+						--username postgres \
+						--verbose \
+						--dbname elets \
+						> /backup/${env.BUILD_ID}.backup
 						ls /backup
 						
 ENDSSH'
