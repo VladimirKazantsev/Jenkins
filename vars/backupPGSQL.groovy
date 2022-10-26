@@ -25,13 +25,17 @@ def call() {
 
 		environment{
 			NFS_PATH=""
+			BACKUPNAME=""
+			BACKUPNAME=""
 		}
 
 		stages {
 			stage("Set vars") {
 				steps {
 					script {
-					NFS_PATH="/backup"
+						BACKUPNAME="${params.IpServer}-${BACKUPDATE}.backup"
+						BACKUPDATE=sh(returnStdout: true, script: 'date +"%Y-%m-%d-%H%M"').trim()
+						NFS_PATH="/backup"
 					}
 				}
 			}
@@ -45,7 +49,7 @@ def call() {
 						--verbose \
 						--clean \
 						--dbname elets \
-						> ${NFS_PATH}/${env.BUILD_ID}.backup
+						> ${NFS_PATH}/${BACKUPNAME}${env.BUILD_ID}
 						ls /backup
 						
 ENDSSH'
