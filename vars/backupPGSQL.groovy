@@ -21,7 +21,9 @@ def call() {
 		stages {
 			stage("Set vars") {
 				steps {
+					script {
 					NFS_PATH="/backup"
+					}
 				}
 			}
 			stage("Ensure source folder exist") {
