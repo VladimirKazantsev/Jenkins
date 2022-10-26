@@ -17,7 +17,7 @@ def call() {
 		stages {
 			stage("Ensure source folder exist") {
 				steps {
-					sh '''!#/bim/bash 
+					sh '''!#/bin/bash 
 						ssh jenkins@192.168.50.230 << ENDSSH
 						
 						hostname
