@@ -24,9 +24,9 @@ def call() {
 		}
 
 		environment{
+			BACKUPNAME=""
+			BACKUPDATE=""
 			NFS_PATH=""
-			BACKUPNAME=""
-			BACKUPNAME=""
 		}
 
 		stages {
