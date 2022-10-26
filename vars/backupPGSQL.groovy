@@ -27,6 +27,7 @@ def call() {
 			BACKUPNAME=""
 			BACKUPDATE=""
 			NFS_PATH=""
+			TARNAME=""
 		}
 
 		stages {
@@ -36,6 +37,7 @@ def call() {
 						BACKUPDATE=sh(returnStdout: true, script: 'date +"%Y-%m-%d-%H%M"').trim()
 						BACKUPNAME="${params.IpServer}-${BACKUPDATE}.backup"
 						NFS_PATH="/backup"
+						TARNAME="${BACKUPNAME}.tar.gz"
 					}
 				}
 			}
@@ -55,6 +57,16 @@ def call() {
 ENDSSH'
 """
 				} 
+			}
+			stage("targz backup") {
+				steps {
+					sh """
+						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
+						tar czvf ${NFS_PATH}/${TARNAME} ${NFS_PATH}/${BACKUPNAME}
+						
+ENDSSH'
+"""
+				}
 			}
 		}
 	}
