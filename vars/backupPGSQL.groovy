@@ -45,13 +45,14 @@ def call() {
 				steps {
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
-						# echo =================Имя хоста===================
+						echo =================Имя хоста===================
 						docker exec pg5432 pg_dump \
 						--username postgres \
 						--verbose \
 						--clean \
 						--dbname elets \
 						> ${NFS_PATH}/${BACKUPNAME}
+						ls ${NFS_PATH}
 						
 						
 ENDSSH'
