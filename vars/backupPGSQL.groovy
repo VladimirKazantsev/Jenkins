@@ -25,6 +25,7 @@ def call() {
 						pwd
 						echo =============Образы докер==============
 						docker images
+						ls /backup
 						
 ENDSSH'
 """
