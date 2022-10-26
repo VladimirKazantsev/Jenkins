@@ -33,8 +33,8 @@ def call() {
 			stage("Set vars") {
 				steps {
 					script {
-						BACKUPNAME="${params.IpServer}-${BACKUPDATE}.backup"
 						BACKUPDATE=sh(returnStdout: true, script: 'date +"%Y-%m-%d-%H%M"').trim()
+						BACKUPNAME="${params.IpServer}-${BACKUPDATE}.backup"
 						NFS_PATH="/backup"
 					}
 				}
