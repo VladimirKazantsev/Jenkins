@@ -17,15 +17,13 @@ def call() {
 		stages {
 			stage("Ensure source folder exist") {
 				steps {
-					script {
-					sh '''
-						ssh jenkins@192.168.50.230 'bash -s << ENDSSH
+					sh """
+						ssh jenkins@192.168.50.230 'bash -s << 'ENDSSH'
 						
 						hostname
 						
-ENDSSH
-'''
-					}
+ENDSSH'
+"""
 				} 
 			}
 		}
