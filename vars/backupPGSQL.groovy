@@ -62,7 +62,7 @@ ENDSSH'
 				steps {
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
-						tar czvf ${NFS_PATH}/${TARNAME} ${NFS_PATH}/${BACKUPNAME}
+						tar czvf ${NFS_PATH}/${TARNAME} -C ${NFS_PATH} ${BACKUPNAME}
 						
 ENDSSH'
 """
