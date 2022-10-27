@@ -45,7 +45,7 @@ def call() {
 				steps {
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
-						echo =================Имя хоста===================
+						echo =================Создание дампа===================
 						docker exec pg5432 pg_dump \
 						--username postgres \
 						--verbose \
