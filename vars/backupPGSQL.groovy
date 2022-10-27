@@ -63,6 +63,7 @@ ENDSSH'
 				steps {
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
+						echo =================Создание архива===================
 						tar czvf ${NFS_PATH}/${TARNAME} -C ${NFS_PATH} ${BACKUPNAME}
 						rm ${NFS_PATH}/${BACKUPNAME}
 						
