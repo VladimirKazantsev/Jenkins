@@ -29,7 +29,7 @@ def call() {
 			stage("Сondition") {
 				steps {
 					script {
-						if (params.IpServer == 192.168.50.230)
+						if (params.IpServer == "192.168.50.230")
 						echo "Переменная равна ${params.IpServer}"
 					}
 				}
