@@ -31,7 +31,7 @@ def call() {
 				steps {
 					script {
 						try {
-								sh 'ls .'
+								sh 'ls truba'
 						}
 						catch (all) {
 								echo 'Neverno zadana direktory'
