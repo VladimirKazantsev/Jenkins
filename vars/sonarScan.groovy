@@ -34,18 +34,20 @@ def call() {
 			stage("Example") {
 				steps {
 					script {
-						try {
-							sh "mkdir -p ${it.service}"
+						datas.each {
+							try {
+								sh "mkdir -p ${it.service}"
 
-                dir("${it.service}") {
+									dir("${it.service}") {
 
-                  git branch: "${it.branch}",
-                          url: "${it.repo}"
-								}
-								sh 'ls truba'
-						}
-						catch (all) {
-								echo 'Neverno zadana direktory'
+										git branch: "${it.branch}",
+														url: "${it.repo}"
+									}
+									sh 'ls truba'
+							}
+							catch (all) {
+									echo 'Neverno zadana direktory'
+							}
 						}
 					}
 				}
