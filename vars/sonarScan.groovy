@@ -29,10 +29,10 @@ def call() {
 			}
 			stage("Example") {
         try {
-            sh 'exit 1'
+            sh 'ls .'
         }
-        catch (exc) {
-            echo 'Something failed, I should sound the klaxons!'
+        catch (all) {
+            echo 'Neverno zadana direktory'
         }
       }
 		}
