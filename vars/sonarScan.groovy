@@ -44,14 +44,14 @@ def call() {
 			stage("Example") {
 				steps {
 					script {
-						datas.each {
-							try {								
+						
+							try {
 									sh 'ls truba'
 							}
 							catch (all) {
 									echo 'Neverno zadana direktory'
 							}
-						}
+						
 					}
 				}
       }
