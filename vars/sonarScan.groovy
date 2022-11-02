@@ -35,6 +35,13 @@ def call() {
 				steps {
 					script {
 						try {
+							sh "mkdir -p ${it.service}"
+
+                dir("${it.service}") {
+
+                  git branch: "${it.branch}",
+                          url: "${it.repo}"
+								}
 								sh 'ls truba'
 						}
 						catch (all) {
