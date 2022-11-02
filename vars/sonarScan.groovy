@@ -13,7 +13,7 @@ def call() {
 				steps {
 					echo "===============Scan Sonar======================="
 					script {
-					def dockerfilecontents = libraryResource "sonar/repos.yml"
+					def data = libraryResource "sonar/repos.yml"
 					writeFile (file: 'repos.yml', text: data)
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
