@@ -22,6 +22,14 @@ def call() {
 						println "${it.testpath}"
 						branchname = "${it.testpath}".replace("/", "-")
 						println "${branchname}"
+
+						sh "mkdir -p ${it.service}"
+
+									dir("${it.service}") {
+
+										git branch: "${it.branch}",
+														url: "${it.repo}"
+									}
 					
 					}
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
@@ -35,14 +43,7 @@ def call() {
 				steps {
 					script {
 						datas.each {
-							try {
-								sh "mkdir -p ${it.service}"
-
-									dir("${it.service}") {
-
-										git branch: "${it.branch}",
-														url: "${it.repo}"
-									}
+							try {								
 									sh 'ls truba'
 							}
 							catch (all) {

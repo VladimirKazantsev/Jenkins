@@ -2,6 +2,7 @@
   color: blue
   engine: mini
   radius: semnadcat
+  service: Gantt
   testpath: "ASE.MD.UnifiedSchedule.Gantt.UnitTests/ASE.MD.UnifiedSchedule.Gantt.UnitTests.csproj"
   branch: develop
   repo: ssh://git@github.com:VladimirKazantsev/web1.git
@@ -10,6 +11,7 @@
   color: grin
   engine: turbo
   radius: dvadzatodin
+  service: ImportService
   testpath: "ASE.MD.UnifiedSchedule.ImportService.UnitTests/ASE.MD.UnifiedSchedule.ImportService.UnitTests.csproj"
   branch: develop
   repo: ssh://git@github.com:VladimirKazantsev/web1.git
