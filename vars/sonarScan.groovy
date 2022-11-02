@@ -16,6 +16,10 @@ def call() {
 					def data = libraryResource "sonar/repos.yml"
 					writeFile (file: 'repos.yml', text: data)
 					def datas = readYaml file: 'repos.yml'
+					datas.each {
+
+						println "${it}"
+					}
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
 					sh "ls"
