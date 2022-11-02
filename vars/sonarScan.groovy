@@ -10,8 +10,10 @@ def call() {
 		stages {
 			
 			stage("Scan Sonar") {
+				
 				steps {
 					echo "===============Scan Sonar======================="
+					
 					script {
 					def data = libraryResource "sonar/repos.yml"
 					writeFile (file: 'repos.yml', text: data)
@@ -31,7 +33,7 @@ def call() {
 						// 								url: "${it.repo}"
 									}
 					
-					}
+					//}
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
 					sh "ls"
