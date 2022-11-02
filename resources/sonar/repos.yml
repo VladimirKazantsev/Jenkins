@@ -2,8 +2,10 @@
   color: blue
   engine: mini
   radius: semnadcat
+  testpath: "ASE.MD.UnifiedSchedule.Gantt.UnitTests/ASE.MD.UnifiedSchedule.Gantt.UnitTests.csproj"
 
 - Toyota:
   color: grin
   engine: turbo
   radius: dvadzatodin
+  testpath: "ASE.MD.UnifiedSchedule.ImportService.UnitTests/ASE.MD.UnifiedSchedule.ImportService.UnitTests.csproj"
