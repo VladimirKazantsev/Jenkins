@@ -19,16 +19,16 @@ def call() {
 					def branchname =""
 					datas.each {
 
-						println "${it.testpath}"
+						println "${it.branch}"
 						branchname = "${it.testpath}".replace("/", "-")
 						println "${branchname}"
 
-						sh "mkdir -p ${it.service}"
+						// sh "mkdir -p ${it.service}"
 
-									dir("${it.service}") {
+						// 			dir("${it.service}") {
 
-										git branch: "${it.branch}",
-														url: "${it.repo}"
+						// 				git branch: "${it.branch}",
+						// 								url: "${it.repo}"
 									}
 					
 					}
