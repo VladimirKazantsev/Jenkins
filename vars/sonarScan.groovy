@@ -25,15 +25,15 @@ def call() {
 						branchname = "${it.testpath}".replace("/", "-")
 						println "${branchname}"
 
-						// sh "mkdir -p ${it.service}"
+						sh "mkdir -p ${it.service}"
 
-						// 			dir("${it.service}") {
+									dir("${it.service}") {
 
-						// 				git branch: "${it.branch}",
-						// 								url: "${it.repo}"
+										git branch: "develop" //"${it.branch}",
+														url: "git@github.com:VladimirKazantsev/web1.git" //"${it.repo}"
 									}
 					
-					//}
+					}
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
 					sh "ls"
