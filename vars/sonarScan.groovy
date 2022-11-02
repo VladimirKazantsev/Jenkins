@@ -28,12 +28,14 @@ def call() {
 				} 
 			}
 			stage("Example") {
-        try {
-            sh 'ls .'
-        }
-        catch (all) {
-            echo 'Neverno zadana direktory'
-        }
+				script {
+					try {
+							sh 'ls .'
+					}
+					catch (all) {
+							echo 'Neverno zadana direktory'
+					}
+				}	
       }
 		}
 	}
