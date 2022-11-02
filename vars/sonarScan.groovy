@@ -18,7 +18,7 @@ def call() {
 					def datas = readYaml file: 'repos.yml'
 					datas.each {
 
-						println "${it}"
+						println "${el}"
 					}
 					// writeFile file : 'Dockerfile', text: dockerfilecontents
 					sh "pwd"
