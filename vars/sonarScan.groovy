@@ -27,14 +27,15 @@ def call() {
 					}
 				} 
 			}
-			// stage("Create Docker image") {
-			// 	steps {
-			// 		echo "=====================Start build image============================="
-			// 		script {
-			// 			docker.build("anshelen/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
-			// 		}
-			// 	}
-			// }
+			stage('Example') {
+        try {
+            sh 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
+        }
+      }
 		}
 	}
 }
