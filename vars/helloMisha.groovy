@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String name, String lastname){
+def call(String lastname, String name){
 	pipeline {
 		agent any
 
