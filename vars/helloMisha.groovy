@@ -8,7 +8,7 @@ def call(String lastname, String name){
 
 			stage("Example") {
 				steps {
-					sh "echo Privet ${myname} po familii ${lastname}"
+					sh "echo Privet ${name} po familii ${lastname}"
 				}
 			}
 		}
