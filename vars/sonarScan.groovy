@@ -28,7 +28,7 @@ def call() {
 						sh "mkdir -p ${it.service}"
 
 									dir("${it.service}") {
-										git	branch: "testirovchik",
+										git	branch: "develop",
 												url: "git@github.com:VladimirKazantsev/web1.git"
 										// git branch: "develop" //"${it.branch}",
 										// 				url: "git@github.com:VladimirKazantsev/web1.git" //"${it.repo}"
