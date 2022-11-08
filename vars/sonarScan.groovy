@@ -60,6 +60,7 @@ def call() {
 				steps {
 					withSonarQubeEnv(installationName: 'sonarqubeElets') { 
           sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+					}
 				}
       }
 		}
