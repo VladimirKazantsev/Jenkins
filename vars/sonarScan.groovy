@@ -59,12 +59,18 @@ def call() {
       }
 			stage("SonarQube scan") {
 				steps {
-					script {
-						withSonarQubeEnv(installationName: 'sonarqubeElets') { 
-						// sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-						sh "dotnet /var/lib/jenkins/.dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
-						}
+					def scannerHome = tool 'SonarScanner for MSBuild'
+					withSonarQubeEnv() {
+					sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
+					sh "dotnet build"
+					sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
 					}
+					// script {
+					// 	withSonarQubeEnv(installationName: 'sonarqubeElets') { 
+					// 	// sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+					// 	sh "dotnet /var/lib/jenkins/.dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
+					// 	}
+					// }
 				}
       }
 		}
