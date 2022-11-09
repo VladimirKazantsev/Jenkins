@@ -56,11 +56,11 @@ def call() {
 					}
 				}
       }
-			stage("Sonar scan") {
+			stage("SonarQube scan") {
 				steps {
 					withSonarQubeEnv(installationName: 'SonarScannerMSBuildElets') { 
           // sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-					sh "dotnet ${MSBUILD_SQ_SCANNER_HOME}/SonarScanner.MSBuild.dll begin /k:\"Testing-Local\""
+					sh "dotnet .dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin /k:"testVladimir""
 					}
 				}
       }
