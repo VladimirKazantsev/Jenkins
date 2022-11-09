@@ -59,11 +59,13 @@ def call() {
       }
 			stage("SonarQube scan") {
 				steps {
-					def scannerHome = tool 'SonarScanner for MSBuild'
-					withSonarQubeEnv() {
-					sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
-					sh "dotnet build"
-					sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+					script {
+						def scannerHome = tool 'SonarScanner for MSBuild'
+						withSonarQubeEnv(installationName: 'sonarqubeElets') {
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
+						sh "dotnet build"
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+						}
 					}
 					// script {
 					// 	withSonarQubeEnv(installationName: 'sonarqubeElets') { 
