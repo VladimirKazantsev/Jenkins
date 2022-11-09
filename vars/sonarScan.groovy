@@ -22,8 +22,9 @@ def call() {
 					datas.each {
 
 						println "${it.branch}"
-						branchname = "${it.testpath}".replace("/", "-")
-						println "${branchname}"
+						println "${it.testpath}"
+						testpathname = "${it.testpath}".replace("/", "-")
+						println "${testpathname}"
 
 						sh "mkdir -p ${it.service}"
 
