@@ -60,7 +60,7 @@ def call() {
 			stage("SonarQube scan") {
 				steps {
 					script {
-						def scannerHome = tool 'SonarQube 1'
+						def scannerHome = tool 'SonarQube-1'
 						println "${scannerHome}"
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
