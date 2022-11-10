@@ -22,7 +22,7 @@ def call() {
 						def scannerHome = tool 'SonarQube-1'
 
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
-						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /d:sonar.verbose=true /k:\"vladimir\""
 						sh "dotnet build Helloworld.csproj"
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
 						}
