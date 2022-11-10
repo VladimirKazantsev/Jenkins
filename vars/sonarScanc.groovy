@@ -15,7 +15,7 @@ def call() {
 					echo "===============Scan Sonar======================="
 					
 					script {
-						git	url: "git@github.com:VladimirKazantsev/c-app.git"
+						git url: "git@github.com:VladimirKazantsev/web1.git"
 						def scannerHome = tool 'SonarQube-1'
 
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
