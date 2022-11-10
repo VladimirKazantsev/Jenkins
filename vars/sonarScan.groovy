@@ -63,9 +63,13 @@ def call() {
 						def scannerHome = tool 'SonarQube-1'
 						println "${scannerHome}"
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
+						sh "tree"
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
+						sh "tree"
 						sh "dotnet build"
+						sh "tree"
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+						sh "tree"
 						}
 					}
 					// script {
