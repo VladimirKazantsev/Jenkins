@@ -22,9 +22,14 @@ def call() {
 						def scannerHome = tool 'SonarQube-1'
 
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
-						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /d:sonar.verbose=true /k:\"vladimir\""
+						
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin  /k:\"testVladimir\" /d:sonar.login="sqp_5111c5b096cf74f8f17cccb9c0bd3d8de1ebf943""
 						sh "dotnet build Helloworld.csproj"
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+
+						// sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /d:sonar.verbose=true /k:\"vladimir\""
+						// sh "dotnet build Helloworld.csproj"
+						// sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
 						}
 						sh "pwd"
 						sh "ls"
