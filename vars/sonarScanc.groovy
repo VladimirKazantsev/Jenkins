@@ -21,7 +21,7 @@ def call() {
 
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
-						sh "dotnet build"
+						sh "dotnet build Helloworld.csproj"
 						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
 						}
 						sh "pwd"
@@ -36,7 +36,7 @@ def call() {
 					script {
 						
 							try {
-									sh 'ls truba'
+									sh 'ls'
 							}
 							catch (all) {
 									echo 'Neverno zadana direktory'
