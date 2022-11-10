@@ -1,7 +1,9 @@
 #!/usr/bin/env groovy
 def call() {
 	pipeline {
-		agent any
+		agent {
+			label 'Glavnyi'
+		} 
 		
 		options {
 			timestamps()
