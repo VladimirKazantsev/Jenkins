@@ -21,6 +21,7 @@ def call() {
 								url: "git@github.com:VladimirKazantsev/c-app.git"
 						def scannerHome = tool 'SonarQube-1'
 						sh "ls"
+						sh "pwd"
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
 						
 						// sh "dotnet /var/lib/jenkins/.dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin  /k:\"testVladimir\" /d:sonar.verbose=true /d:sonar.login="sqp_5111c5b096cf74f8f17cccb9c0bd3d8de1ebf943""
