@@ -6,6 +6,10 @@ def call() {
 		options {
 			timestamps()
 		}
+
+		environment {
+			HOME = "/tmp"
+		} 
 		
 		stages {
 			
