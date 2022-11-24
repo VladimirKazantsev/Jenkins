@@ -36,6 +36,10 @@ def call() {
 						// sh "dotnet build Helloworld.csproj"
 						// sh "dotnet test Helloworld.csproj"
 						// sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"testVladimir\" /d:sonar.verbose=true /d:sonar.login="sqp_5111c5b096cf74f8f17cccb9c0bd3d8de1ebf943""
+						sh "dotnet build Helloworld.csproj"
+						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end /d:sonar.login="sqp_5111c5b096cf74f8f17cccb9c0bd3d8de1ebf943""
 						}
 						sh "pwd"
 						sh "ls"
