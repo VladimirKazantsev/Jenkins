@@ -22,6 +22,7 @@ def call() {
 						def scannerHome = tool 'SonarQube-1'
 						sh "ls"
 						sh "pwd"
+						println "${scannerHome}"
 						sh "whoami"
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
 						
