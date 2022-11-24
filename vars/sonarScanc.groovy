@@ -24,6 +24,7 @@ def call() {
 						sh "pwd"
 						println "${scannerHome}"
 						sh "whoami"
+						sh "which ls"
 						sh "which dotnet"
 						withSonarQubeEnv(installationName: 'sonarqubeElets') {
 						
