@@ -25,8 +25,10 @@ def call() {
 					def branchname =""
 					def logfiles = datas.toString().trim()
 					println "${logfiles}"
+					println GroovySystem.version
+					//!("${logfiles}" in ['vvvvvv','www'])
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
-					if (!("${logfiles}" in ['vvvvvv','www'])) {
+					if (logfiles.contains('blue') || logfiles.contains('wwwww')) {
 
              echo "it's UnifiedSchedule"
 					 }
