@@ -61,26 +61,26 @@ def call() {
 					}
 				}
       }
-			stage("SonarQube scan") {
-				steps {
-					script {
-						def scannerHome = tool 'SonarQube-1'
-						println "${scannerHome}"
-						withSonarQubeEnv(installationName: 'sonarqubeElets') {
-						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
-						sh "ls"
-						sh "dotnet build"
-						sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
-						}
-					}
-					// script {
-					// 	withSonarQubeEnv(installationName: 'sonarqubeElets') { 
-					// 	// sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-					// 	sh "dotnet /var/lib/jenkins/.dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
-					// 	}
-					// }
-				}
-      }
+			// stage("SonarQube scan") {
+			// 	steps {
+			// 		script {
+			// 			def scannerHome = tool 'SonarQube-1'
+			// 			println "${scannerHome}"
+			// 			withSonarQubeEnv(installationName: 'sonarqubeElets') {
+			// 			sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"vladimir\""
+			// 			sh "ls"
+			// 			sh "dotnet build"
+			// 			sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+			// 			}
+			// 		}
+			// 		// script {
+			// 		// 	withSonarQubeEnv(installationName: 'sonarqubeElets') { 
+			// 		// 	// sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+			// 		// 	sh "dotnet /var/lib/jenkins/.dotnet/tools/.store/dotnet-sonarscanner/5.8.0/dotnet-sonarscanner/5.8.0/tools/netcoreapp3.0/any/SonarScanner.MSBuild.dll begin /k:\"testVladimir\""
+			// 		// 	}
+			// 		// }
+			// 	}
+      // }
 		}
 	}
 }
