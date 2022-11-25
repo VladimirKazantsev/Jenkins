@@ -23,10 +23,11 @@ def call() {
 					writeFile (file: 'repos.yml', text: data)
 					def datas = readYaml file: 'repos.yml'
 					def branchname =""
+					datas.toString().trim()
 					datas.each {
-						if (it.contains('semnadcat')) {
-              echo "it's UnifiedSchedule"
-						}
+						// if (it.contains('semnadcat')) {
+            //   echo "it's UnifiedSchedule"
+						// }
 						println "${it.branch}"
 						//println "${it.testpath}"
 						testbranchname = "${it.branch}".replace("/", "-")
