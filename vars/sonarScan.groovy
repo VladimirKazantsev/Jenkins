@@ -24,7 +24,9 @@ def call() {
 					def datas = readYaml file: 'repos.yml'
 					def branchname =""
 					datas.each {
-
+						if (it.contains('semnadcat')) {
+              echo "it's UnifiedSchedule"
+						}
 						println "${it.branch}"
 						//println "${it.testpath}"
 						testbranchname = "${it.branch}".replace("/", "-")
