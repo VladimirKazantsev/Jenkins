@@ -28,7 +28,7 @@ def call() {
 					println GroovySystem.version
 					//!("${logfiles}" in ['vvvvvv','www'])
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
-					if (logfiles.contains('blue') || logfiles.contains('wwwww')) {
+					if (logfiles.contains('ggrhrs') || logfiles.contains('blue')) {
 
              echo "it's UnifiedSchedule"
 					 }
