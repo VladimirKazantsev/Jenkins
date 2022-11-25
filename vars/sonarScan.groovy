@@ -23,7 +23,8 @@ def call() {
 					writeFile (file: 'repos.yml', text: data)
 					def datas = readYaml file: 'repos.yml'
 					def branchname =""
-					datas.toString().trim()
+					def logfiles = datas.toString().trim()
+					println "${logfiles}"
 					datas.each {
 						// if (it.contains('semnadcat')) {
             //   echo "it's UnifiedSchedule"
