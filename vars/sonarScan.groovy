@@ -26,7 +26,7 @@ def call() {
 					def logfiles = datas.toString().trim()
 					println "${logfiles}"
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
-					if (!(['wwwwww','ggggg'].contains(logfiles))) {
+					if (!${logfiles} in ['www','dddfd']) {
 
              echo "it's UnifiedSchedule"
 					 }
