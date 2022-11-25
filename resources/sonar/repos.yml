@@ -4,7 +4,7 @@
   radius: semnadcat
   service: Gantt
   testpath: "ASE.MD.UnifiedSchedule.Gantt.UnitTests/ASE.MD.UnifiedSchedule.Gantt.UnitTests.csproj"
-  branch: develop
+  branch: 1.9.6.2/develop
   repo: ssh://git@github.com:VladimirKazantsev/web1.git
 
 - Toyota:
@@ -13,5 +13,5 @@
   radius: dvadzatodin
   service: ImportService
   testpath: "ASE.MD.UnifiedSchedule.ImportService.UnitTests/ASE.MD.UnifiedSchedule.ImportService.UnitTests.csproj"
-  branch: develop
+  branch: 1.9.6.3-develop
   repo: ssh://git@github.com:VladimirKazantsev/web1.git
