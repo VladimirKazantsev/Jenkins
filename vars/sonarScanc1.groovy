@@ -19,7 +19,7 @@ def call() {
 					script {
 						git branch: "main",
 								url: "git@github.com:VladimirKazantsev/c-app.git"
-						def scannerHome = tool 'SonarQube-1'
+						def scannerHome = tool 'SonarScannerMSBuildElets1'
 						sh "ls"
 						sh "pwd"
 						println "${scannerHome}"
