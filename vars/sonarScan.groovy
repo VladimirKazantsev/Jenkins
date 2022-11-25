@@ -25,7 +25,7 @@ def call() {
 					def branchname =""
 					def logfiles = datas.toString().trim()
 					println "${logfiles}"
-					if (logfiles.contains('blue')) {
+					if (logfiles.contains('blu')) {
              echo "it's UnifiedSchedule"
 					 }
 					datas.each {
