@@ -25,6 +25,7 @@ def call() {
 					def branchname =""
 					def logfiles = datas.toString().trim()
 					println "${logfiles}"
+					println "${datas}"
 					println GroovySystem.version
 					//!("${logfiles}" in ['vvvvvv','www'])
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
