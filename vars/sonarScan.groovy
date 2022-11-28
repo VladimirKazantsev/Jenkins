@@ -47,7 +47,7 @@ def call() {
 										if("${it.color}" == "blue"){
 
 											echo 'Eto goluboy cvet'
-											if("${it.engine}" == "mini"){
+											if("${it.engine}" == "minirr"){
 												echo '=====Vlogennoe esli====='
 											}else{
 												echo '====Vlogennoe inache===='
