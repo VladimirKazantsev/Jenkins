@@ -44,7 +44,7 @@ def call() {
 									dir("${it.service}") {
 										git	branch: "1.9.6.2/develop",
 												url: "git@github.com:VladimirKazantsev/web1.git"
-										if("${it.color}" == "blue"){
+										if("${it.color}" == "bluee"){
 
 											echo 'Eto goluboy cvet'
 
