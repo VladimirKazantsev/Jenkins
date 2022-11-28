@@ -44,6 +44,15 @@ def call() {
 									dir("${it.service}") {
 										git	branch: "1.9.6.2/develop",
 												url: "git@github.com:VladimirKazantsev/web1.git"
+										if("${it.color}" == "blue"){
+
+											echo 'Eto goluboy cvet'
+
+										}else{
+
+											echo 'Eto drugoi cvet'
+
+										}
 										// git branch: "develop" //"${it.branch}",
 										// 				url: "git@github.com:VladimirKazantsev/web1.git" //"${it.repo}"
 									}
