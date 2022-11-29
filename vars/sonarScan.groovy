@@ -47,7 +47,7 @@ def call() {
 												url: "git@github.com:VladimirKazantsev/web1.git"
 										if("${it.color}" == "blue"){
 
-											echo 'Eto goluboy cvet'
+									echo 'Eto goluboy cvet'
 											if("${it.engine}" == "minirr"){
 												echo '=====Vlogennoe esli====='
 											}else{
