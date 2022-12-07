@@ -37,7 +37,9 @@ def call() {
 						
 						println "${it.branch}"
 						//println "${it.testpath}"
-						testbranchname = "${it.branch}".replace("/", "-")
+						if("${it.branch}" == "1.9.6.2/develop"){
+						  testbranchname = "${it.branch}".replace("/", "-")
+						}
 						println "${testbranchname}"
 
 						sh "mkdir -p ${it.service}"
