@@ -17,7 +17,6 @@ def call() {
 				
 				steps {
 					echo "===============Scan Sonar======================="
-					println "${BRANCH_NAME}"
 					println "${BUILD_NUMBER}"
 					script {
 					def data = libraryResource "sonar/repos.yml"
