@@ -17,7 +17,8 @@ def call() {
 				
 				steps {
 					echo "===============Scan Sonar======================="
-					
+					// println "${BRANCH_NAME}"
+					println "${BUILD_NUMBER}"
 					script {
 					def data = libraryResource "sonar/repos.yml"
 					writeFile (file: 'repos.yml', text: data)
@@ -27,7 +28,7 @@ def call() {
 					println "${logfiles}"
 					println "${datas}"
 					println GroovySystem.version
-					println "${BRANCH_NAME}"
+					
 					//!("${logfiles}" in ['vvvvvv','www'])
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
 					if (logfiles.contains('ggrhrs') || logfiles.contains('ImportService1') || logfiles.contains('UnifiedSchedule.Gantt')) {
