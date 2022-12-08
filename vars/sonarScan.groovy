@@ -27,7 +27,7 @@ def call() {
 					println "${logfiles}"
 					println "${datas}"
 					println GroovySystem.version
-					println "${env.BRANCH_NAME}"
+					println "${BRANCH_NAME}"
 					//!("${logfiles}" in ['vvvvvv','www'])
 					//logfiles.contains('blue') || logfiles.contains('wwwww')
 					if (logfiles.contains('ggrhrs') || logfiles.contains('ImportService1') || logfiles.contains('UnifiedSchedule.Gantt')) {
