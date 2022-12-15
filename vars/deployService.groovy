@@ -35,7 +35,7 @@ def call() {
 						docker run -d \
 						--name moskow \
 						--restart always \
-						--p 80:80 \
+						-p 80:80 \
 						nginx
 						
 						
