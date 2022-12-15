@@ -33,7 +33,7 @@ def call() {
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
 						echo =================Развертывание контейнера===================
 						docker run -d \
-						--name moskow:${BUILD_NUMBER} \
+						--name moskow-${BUILD_NUMBER} \
 						--restart always \
 						-p 80:80 \
 						nginx
