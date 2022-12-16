@@ -50,7 +50,7 @@ def call() {
 						--username postgres \
 						--verbose \
 						--clean \
-						--dbname elets \
+						--dbname platform \
 						> ${NFS_PATH}/${BACKUPNAME}
 						#ls ${NFS_PATH}
 						
