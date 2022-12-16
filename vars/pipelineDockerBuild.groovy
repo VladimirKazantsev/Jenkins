@@ -22,15 +22,21 @@ def call() {
 					}
 				} 
 			}
-			stage("Create Docker image") {
+			stage("Create/Push Docker image") {
 				steps {
 					echo "=====================Start build image============================="
 					script {
 						docker.withRegistry('http://192.168.50.17:8123','mynexusdockerhub'){
 						def customImage = docker.build("192.168.50.17:8123/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
+						println (dockerImage.id)
 						customImage.push()
 					 }
 					}
+				}
+			}
+			stage("Deploy") {
+				steps {
+					echo "=====================Deploy conteiner on server============================="
 				}
 			}
 		}
