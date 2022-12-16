@@ -47,10 +47,10 @@ def call() {
 					  sh """
   
               ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
-  
-                docker run -d \
-                --name micro-${BUILD_NUMBER} \
-                ${imageReference}
+                ls       
+                // docker run -d \
+                // --name micro-${BUILD_NUMBER} \
+                // ${imageReference}
   
 ENDSSH'
   
