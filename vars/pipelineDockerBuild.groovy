@@ -10,6 +10,7 @@ def call() {
 			timestamps()
 		}
 		stages {
+			
 			stage("Load Dockerfile") {
 				steps {
 					echo "===============Load Dockerfile on Jenkins======================="
@@ -22,23 +23,40 @@ def call() {
 					}
 				} 
 			}
+			
 			stage("Create/Push Docker image") {
 				steps {
 					echo "=====================Start build image============================="
 					script {
 						docker.withRegistry('http://192.168.50.17:8123','mynexusdockerhub'){
 						def customImage = docker.build("192.168.50.17:8123/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
-						println (customImage.id)
+						println (customImage)
 						customImage.push()
 					 }
 					}
 				}
 			}
-			stage("Deploy") {
-				steps {
-					echo "=====================Deploy conteiner on server============================="
-				}
-			}
+			
+// 			stage("Deploy") {
+// 				steps {
+// 					echo "=====================Deploy conteiner on server============================="
+// 					sh """
+  
+//             ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
+  
+//               docker run -d \
+//                 --name ${config.serviceNameLowerCase} \
+//                 --net pmd-network \
+//                 --restart always \
+//                 --ip 10.0.10.101 \
+//                 -v /opt/docker-conts/logs/${config.serviceNameLowerCase}:/app/Logs \
+//               ${imageReference}
+  
+// ENDSSH'
+  
+//         """
+// 				}
+// 			}
 		}
 	}
 }
