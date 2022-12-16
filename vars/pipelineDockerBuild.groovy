@@ -1,7 +1,11 @@
 #!/usr/bin/env groovy
 def call() {
 	pipeline {
-		agent any
+		agent {
+
+      label 'linux'
+
+		}
 		options {
 			timestamps()
 		}
@@ -22,7 +26,7 @@ def call() {
 				steps {
 					echo "=====================Start build image============================="
 					script {
-						docker.build("anshelen/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
+						docker.build("192.168.50.17:8123/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
 					}
 				}
 			}
