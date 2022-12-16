@@ -43,9 +43,10 @@ def call() {
 			}
 			stage("Create dump DB") {
 				steps {
+					echo "=================Создание дампа==================="
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
-						echo =================Создание дампа===================
+						
 						docker exec pg5432 pg_dump \
 						--username postgres \
 						--verbose \
@@ -61,9 +62,10 @@ ENDSSH'
 			}
 			stage("targz backup") {
 				steps {
+					echo "=================Создание архива==================="
 					sh """
 						ssh jenkins@${params.IpServer} 'bash -s << 'ENDSSH'
-						echo =================Создание архива===================
+						
 						tar czvf ${NFS_PATH}/${TARNAME} -C ${NFS_PATH} ${BACKUPNAME}
 						rm ${NFS_PATH}/${BACKUPNAME}
 						
