@@ -43,18 +43,18 @@ def call() {
 				steps {
 					echo "=====================Deploy conteiner on server============================="
 					script {
-					  println (dockerImage)
-// 					  sh """
+					  def imageReference = "192.168.50.17:8123/microservices-backend:${env.BUILD_ID}"
+					  sh """
   
-//               ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
+              ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
   
-//                 docker run -d \
-//                 --name micro-${BUILD_NUMBER} \
-//                 ${dockerImage}
+                docker run -d \
+                --name micro-${BUILD_NUMBER} \
+                ${imageReference}
   
-// ENDSSH'
+ENDSSH'
   
-// """
+"""
 				  }
 				}
 			}
