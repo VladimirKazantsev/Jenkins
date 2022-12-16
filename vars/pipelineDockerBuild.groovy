@@ -42,17 +42,20 @@ def call() {
 			stage("Deploy") {
 				steps {
 					echo "=====================Deploy conteiner on server============================="
-					sh """
+					script {
+					  println (dockerImage)
+					  sh """
   
-            ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
+              ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
   
-              docker run -d \
+                docker run -d \
                 --name micro-${BUILD_NUMBER} \
-              ${dockerImage}
+                ${dockerImage}
   
 ENDSSH'
   
 """
+				  }
 				}
 			}
 		}
