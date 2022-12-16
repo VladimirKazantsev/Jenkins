@@ -39,26 +39,22 @@ def call() {
 				}
 			}
 			
-// 			stage("Deploy") {
-// 				steps {
-// 					echo "=====================Deploy conteiner on server============================="
-// 					sh """
+			stage("Deploy") {
+				steps {
+					echo "=====================Deploy conteiner on server============================="
+					sh """
   
-//             ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
+            ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
   
-//               docker run -d \
-//                 --name ${config.serviceNameLowerCase} \
-//                 --net pmd-network \
-//                 --restart always \
-//                 --ip 10.0.10.101 \
-//                 -v /opt/docker-conts/logs/${config.serviceNameLowerCase}:/app/Logs \
-//               ${imageReference}
+              docker run -d \
+                --name micro-${BUILD_NUMBER} \
+              ${dockerImage}
   
-// ENDSSH'
+ENDSSH'
   
-//         """
-// 				}
-// 			}
+"""
+				}
+			}
 		}
 	}
 }
