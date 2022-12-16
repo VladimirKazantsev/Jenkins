@@ -48,9 +48,7 @@ def call() {
   
               ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
                 ls       
-                // docker run -d \
-                // --name micro-${BUILD_NUMBER} \
-                // ${imageReference}
+                
   
 ENDSSH'
   
