@@ -10,7 +10,7 @@ def call() {
 			choice(name: 'IpServer',
 				choices: [
 					'Никуда',
-					'192.168.50.230'
+					'192.168.50.231'
 				],
 				description: 'Адрес сервера куда пойдет по ssh'
 
