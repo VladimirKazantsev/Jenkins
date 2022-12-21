@@ -9,6 +9,9 @@ def call() {
 		options {
 			timestamps()
 		}
+		environment{
+			imageReference=""
+		}
 		stages {
 			
 			stage("Load Dockerfile") {
@@ -32,6 +35,7 @@ def call() {
 						def customImage = docker.build("192.168.50.17:8123/microservices-backend:${env.BUILD_ID}","-f Dockerfile .")
 						println (customImage.id)
 						def dockerImage = customImage.id
+						imageReference = customImage.id
 						println (dockerImage)
 						customImage.push()
 					 }
@@ -43,7 +47,7 @@ def call() {
 				steps {
 					echo "=====================Deploy conteiner on server============================="
 					script {
-					  def imageReference = "192.168.50.17:8123/microservices-backend:${env.BUILD_ID}"
+					  // def imageReference = "192.168.50.17:8123/microservices-backend:${env.BUILD_ID}"
 					  sh """
   
               ssh jenkins@192.168.50.231 'bash -s << 'ENDSSH'
