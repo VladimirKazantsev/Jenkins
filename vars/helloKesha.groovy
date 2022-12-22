@@ -1,19 +1,19 @@
 #!/usr/bin/env groovy
 
-def call(Map configm) {
+def call(Map config) {
   pipeline {
     agent any
     stages {
       stage("Этап Первый") {
         steps {
-          sh "echo Privet ${configm.name} po familii ${configm.lastname}"
+          sh "echo Privet ${config.name} po familii ${config.lastname}"
         }
       }
       stage("Этап Второй") {
         steps {
 					sh "pwd"
 					sh "mkdir -p ./Distrib/Config"
-          sh "echo Privet ${configm.name} po familii ${configm.lastname}"
+          sh "echo Privet ${config.name} po familii ${config.lastname}"
         }
       }
     }
